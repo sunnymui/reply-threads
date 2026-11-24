@@ -2,7 +2,7 @@
 
 How the plugin is built and why. For install and usage see the [README](../README.md). Host behaviour that shaped the design (and the quirks found) is in [OpenCode 2 compatibility findings](compatibility.md); the original phased plan is in the [implementation plan](implementation-plan.md).
 
-Verified against `opencode2 0.0.0-beta-19271` with SDK `@opencode/plugin@0.0.0-beta-19275`.
+Verified against `opencode 0.0.0-beta-19271` with SDK `@opencode/plugin@0.0.0-beta-19275`.
 
 ## System Context
 

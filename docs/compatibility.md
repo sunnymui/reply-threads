@@ -22,7 +22,7 @@ This document records Phase 0 analysis performed against the locally installed O
 
 | Item | Value |
 | --- | --- |
-| OpenCode CLI | `opencode2 v0.0.0-beta-19271` |
+| OpenCode CLI | `opencode v0.0.0-beta-19271` |
 | Health endpoint | Healthy, same version |
 | Platform | macOS arm64 |
 | Public API evidence | Running server's `/openapi.json` |

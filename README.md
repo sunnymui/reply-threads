@@ -34,7 +34,7 @@ Read model answers in thread
 
 ## Requirements
 
-- **`opencode2 0.0.0-beta-19271`**. Other versions have not been tested.
+- **`opencode 0.0.0-beta-19271`**. Other versions have not been tested.
 - Node 22.13+ to install dependencies. Tests also require Bun.
 - A terminal with mouse support for selecting text.
 
@@ -74,12 +74,12 @@ Keep your existing settings and plugin entries. If your preview build uses `tui.
 OpenCode downloads the repository and installs its dependencies:
 
 ```sh
-opencode2 plugin add 'github:sunnymui/reply-threads'
+opencode plugin add 'github:sunnymui/reply-threads'
 ```
 
 `plugin add` also adds the plugin to your OpenCode configuration. You don't need to run `npm install`.
 
-Repository download and dependency installation have been tested. TUI loading through `plugin add` has not been fully verified on beta-19271. Use a local checkout for development. After a Git install, restart `opencode2` and check that the Reply Threads toolbar appears in a session.
+Repository download and dependency installation have been tested. TUI loading through `plugin add` has not been fully verified on beta-19271. Use a local checkout for development. After a Git install, restart `opencode` and check that the Reply Threads toolbar appears in a session.
 
 The package isn't published to npm. Install it from GitHub.
 
@@ -202,7 +202,7 @@ The instruction requests one heading per comment. It includes the follow-up exam
 
 | Symptom | Check |
 | --- | --- |
-| No toolbar | Open a session. For a local checkout, check the path in `opencode.json` and `cli.json`, run `npm install`, and restart the TUI. For a Git install, check `opencode2 plugin list` and restart the TUI. |
+| No toolbar | Open a session. For a local checkout, check the path in `opencode.json` and `cli.json`, run `npm install`, and restart the TUI. For a Git install, check `opencode plugin list` and restart the TUI. |
 | Selecting text does nothing | Turn on Reply Mode, then select text with the mouse. |
 | Send does nothing | Check the error notification. Run `/threads-reconcile` if a previous send has an unknown result. |
 | Comment saved as "unmatched" | The selected text doesn't match the stored source exactly. You can still send the comment. |
