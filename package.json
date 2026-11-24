@@ -2,7 +2,7 @@
   "name": "opencode-reply-threads",
   "version": "0.0.0",
   "private": true,
-  "license": "MIT",
+  "license": "Apache-2.0",
   "type": "module",
   "exports": {
     ".": "./src/app/ServerPlugin.ts",
