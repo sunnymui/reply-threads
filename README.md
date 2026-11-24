@@ -81,7 +81,7 @@ opencode2 plugin add 'github:sunnymui/reply-threads'
 
 Repository download and dependency installation have been tested. TUI loading through `plugin add` has not been fully verified on beta-19271. Use a local checkout for development. After a Git install, restart `opencode2` and check that the Reply Threads toolbar appears in a session.
 
-The package is private and isn't published to npm.
+The package isn't published to npm. Install it from GitHub.
 
 After changing the plugin, restart the TUI client. The background service can keep running.
 
