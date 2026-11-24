@@ -156,9 +156,9 @@ def seed_fixture(home, session_id):
 
 def run(keep_artifacts=False):
     started = time.monotonic()
-    executable = shutil.which(os.environ.get("OPENCODE_BIN", "opencode2"))
+    executable = shutil.which(os.environ.get("OPENCODE_BIN", "opencode"))
     if not executable:
-        raise RuntimeError("opencode2 is not on PATH; set OPENCODE_BIN to its executable")
+        raise RuntimeError("opencode is not on PATH; set OPENCODE_BIN to its executable")
     home = Path(tempfile.mkdtemp(prefix="reply-threads-smoke-", dir=os.environ.get("OPENCODE_SMOKE_DIR")))
     workspace = home / "workspace"
     workspace.mkdir()

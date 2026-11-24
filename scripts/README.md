@@ -66,7 +66,7 @@ python3 -m pip install -r scripts/smoke-requirements.txt
 npm run test:smoke
 ```
 
-The CLI is resolved from PATH. If necessary, set `OPENCODE_BIN=/path/to/opencode2` or
+The CLI is resolved from PATH. If necessary, set `OPENCODE_BIN=/path/to/opencode` or
 `PYTHON=/path/to/python3`. `OPENCODE_SMOKE_DIR` chooses the parent directory for temporary
 homes. No user configs/state are changed. Fixtures are inserted only into the throwaway
 server's database before the TUI attaches; the suite submits annotations, not model prompts.

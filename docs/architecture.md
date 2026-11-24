@@ -413,7 +413,7 @@ The long-term ideal is an indicator beside the original assistant excerpt. The p
 | Indeterminate result | Mark the batch unknown, keep threads locked, reconcile before any retry. |
 | Concurrent instances | Validation and mutation share one storage update. Covered by unit tests on a serialized store; a live two-instance test has not been run. |
 | Plugin unload | Dispose the selection tracker, the three slots and the session listener. |
-| Host API drift | Support is limited to the tested OpenCode version; the smoke test starts a real `opencode2` with the plugin. |
+| Host API drift | Support is limited to the tested OpenCode version; the smoke test starts a real `opencode` with the plugin. |
 
 ## Packaging Boundary
 

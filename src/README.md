@@ -146,7 +146,7 @@ npm run test:smoke   # key feature checks in an isolated live OpenCode TUI
 `scripts/run-tests.mjs` finds tests recursively. TypeScript checks test files too. UI tests
 can combine features, such as the thread panel and annotation editor.
 
-The live smoke suite uses Python 3 and pyte on macOS/Linux. It finds `opencode2` on PATH or
+The live smoke suite uses Python 3 and pyte on macOS/Linux. It finds `opencode` on PATH or
 through `OPENCODE_BIN`. It uses fixture messages instead of model calls and waits for screen
 conditions instead of long sleeps. Run it separately from `npm run check`. See
 [scripts/README.md](../scripts/README.md) for setup and failure logs.
