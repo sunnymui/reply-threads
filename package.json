@@ -1,0 +1,46 @@
+{
+  "name": "opencode-reply-threads",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/app/ServerPlugin.ts",
+    "./tui": "./src/app/TuiPlugin.tsx"
+  },
+  "scripts": {
+    "test": "node scripts/run-tests.mjs",
+    "test:ui": "node scripts/run-tests.mjs ui",
+    "test:smoke": "node scripts/smoke-opencode.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --type-aware --deny-warnings src scripts index.ts tui.ts tui.tsx",
+    "lint:fix": "npm run lint -- --fix",
+    "test:lint": "node --test scripts/oxlint-plugin.test.mjs scripts/jsdoc-rules.test.mjs",
+    "check": "npm run lint && npm run typecheck && npm run test:lint && npm test && npm run test:ui"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "@opencode/plugin": "0.0.0-beta-19275",
+    "zod": "4.1.8"
+  },
+  "peerDependencies": {
+    "@opentui/core": ">=0.5.10",
+    "@opentui/solid": ">=0.5.10",
+    "solid-js": ">=1.9.0"
+  },
+  "devDependencies": {
+    "@opentui/core": "0.5.10",
+    "@opentui/solid": "0.5.10",
+    "@types/node": "24.7.0",
+    "are-docs-informative": "0.0.2",
+    "comment-parser": "1.4.1",
+    "eslint-plugin-jsdoc": "61.0.0",
+    "eslint-plugin-solid": "0.18.1",
+    "oxlint": "1.88.0",
+    "oxlint-tsgolint": "7.0.2004",
+    "solid-js": "1.9.12",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}

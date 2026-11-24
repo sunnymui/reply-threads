@@ -1,0 +1,60 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "oxc"],
+  "jsPlugins": ["eslint-plugin-solid", "./scripts/oxlint-plugin.mjs", { "name": "jsdoc-full", "specifier": "eslint-plugin-jsdoc" }],
+  "categories": {
+    "correctness": "error"
+  },
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "typescript/no-floating-promises": "error",
+    "typescript/no-misused-promises": "error",
+    "typescript/switch-exhaustiveness-check": ["error", { "considerDefaultExhaustiveForUnions": false }],
+    "solid/reactivity": ["error", { "customReactiveFunctions": ["trackCommentSelection"] }],
+    "reply-threads/annotation-enter-scope": "error",
+    "reply-threads/reactive-module-extension": "error",
+    "reply-threads/component-filename": "error",
+    "reply-threads/message-pagination-options": "error",
+    "reply-threads/setup-keymap-scope": "error",
+    "reply-threads/review-history-source": "error",
+    "reply-threads/no-adjacent-jsdoc": "error"
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts", "src/**/*.tsx"],
+      "rules": {
+        "jsdoc-full/require-jsdoc": ["error", {
+          "publicOnly": true,
+          "enableFixer": false,
+          "require": { "FunctionDeclaration": true, "FunctionExpression": true, "ArrowFunctionExpression": true }
+        }],
+        "jsdoc-full/require-description": "error",
+        "reply-threads/informative-function-docs": "error",
+        "jsdoc-full/require-param": ["error", { "checkDestructured": false, "enableFixer": false }],
+        "jsdoc-full/require-param-description": "error",
+        "jsdoc-full/check-param-names": ["error", { "checkDestructured": false }],
+        "jsdoc-full/require-returns": ["error", { "forceRequireReturn": true }],
+        "jsdoc-full/require-returns-description": "error"
+      }
+    },
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx"],
+      "rules": {
+        "solid/reactivity": "off",
+        "jsdoc-full/require-jsdoc": "off",
+        "jsdoc-full/require-description": "off",
+        "reply-threads/informative-function-docs": "off",
+        "jsdoc-full/require-param": "off",
+        "jsdoc-full/require-param-description": "off",
+        "jsdoc-full/check-param-names": "off",
+        "jsdoc-full/require-returns": "off",
+        "jsdoc-full/require-returns-description": "off",
+        "typescript/no-floating-promises": ["error", {
+          "allowForKnownSafeCalls": [{ "from": "package", "package": "@types/node", "name": "test" }]
+        }]
+      }
+    }
+  ]
+}
