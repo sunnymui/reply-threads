@@ -34,7 +34,7 @@ Read model answers in thread
 
 ## Requirements
 
-- **`opencode 0.0.0-beta-19271`**. Other versions have not been tested.
+- **`opencode` 2.4.1** (the server part is checked on this version). The plugin was built against `0.0.0-beta-19271`. Other versions have not been tested.
 - Node 22.13+ to install dependencies. Tests also require Bun.
 - A terminal with mouse support for selecting text.
 
@@ -71,23 +71,27 @@ Keep your existing settings and plugin entries. If your preview build uses `tui.
 
 ### Install from a Git repository
 
-OpenCode downloads the repository and installs its dependencies:
+Reply Threads has a server part and a TUI part. OpenCode loads them from two different config files, so a Git install takes two steps.
 
-```sh
-opencode plugin add 'github:sunnymui/reply-threads'
-```
+1. **Server part.** This downloads the repository and installs its dependencies. You don't need to run `npm install`.
 
-`plugin add` adds the server part of the plugin to the `plugins` list in `~/.config/opencode/opencode.json`. You don't need to run `npm install`. It does not add the TUI part. Add the same entry to `~/.config/opencode/cli.json` yourself:
+   ```sh
+   opencode plugin add 'github:sunnymui/reply-threads'
+   ```
 
-```json
-{
-  "plugins": ["github:sunnymui/reply-threads"]
-}
-```
+   It adds `github:sunnymui/reply-threads` to the `plugins` list in `~/.config/opencode/opencode.json`.
 
-Then restart `opencode` and check that the Reply Threads toolbar appears in a session.
+2. **TUI part.** `plugin add` does not do this. Create or edit `~/.config/opencode/cli.json` and add the same entry. Keep any entries already there.
 
-The server part loads from a Git install (checked on OpenCode 2.4.1). The toolbar itself has not been checked after a Git install. Use a local checkout for development.
+   ```json
+   {
+     "plugins": ["github:sunnymui/reply-threads"]
+   }
+   ```
+
+3. **Restart.** Run `opencode service restart`, quit the TUI with `Ctrl+C`, then start `opencode` again. Open a session and check that the Reply Mode toolbar appears. Without step 2, the toolbar and panel never appear.
+
+The server part loads from a Git install (checked on OpenCode 2.4.1). The toolbar has not been checked after a Git install. Use a local checkout for development.
 
 Git installs fail if `package.json` has a script named `build`, `prepare`, `prepack`, `install`, `preinstall` or `postinstall`. This is an OpenCode bug. Don't add scripts with those names.
 
