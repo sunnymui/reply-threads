@@ -77,9 +77,19 @@ OpenCode downloads the repository and installs its dependencies:
 opencode plugin add 'github:sunnymui/reply-threads'
 ```
 
-`plugin add` also adds the plugin to your OpenCode configuration. You don't need to run `npm install`.
+`plugin add` adds the server part of the plugin to the `plugins` list in `~/.config/opencode/opencode.json`. You don't need to run `npm install`. It does not add the TUI part. Add the same entry to `~/.config/opencode/cli.json` yourself:
 
-Repository download and dependency installation have been tested. TUI loading through `plugin add` has not been fully verified on beta-19271. Use a local checkout for development. After a Git install, restart `opencode` and check that the Reply Threads toolbar appears in a session.
+```json
+{
+  "plugins": ["github:sunnymui/reply-threads"]
+}
+```
+
+Then restart `opencode` and check that the Reply Threads toolbar appears in a session.
+
+The server part loads from a Git install (checked on OpenCode 2.4.1). The toolbar itself has not been checked after a Git install. Use a local checkout for development.
+
+Git installs fail if `package.json` has a script named `build`, `prepare`, `prepack`, `install`, `preinstall` or `postinstall`. This is an OpenCode bug. Don't add scripts with those names.
 
 The package isn't published to npm. Install it from GitHub.
 
