@@ -34,7 +34,7 @@ Read model answers in thread
 
 ## Requirements
 
-- **`opencode` 2.4.1** (the server part is checked on this version). The plugin was built against `0.0.0-beta-19271`. Other versions have not been tested.
+- **`opencode` 2.4.1** (checked on this version). The plugin was built against `0.0.0-beta-19271`. Other versions have not been tested.
 - Node 22.13+ to install dependencies. Tests also require Bun.
 - A terminal with mouse support for selecting text.
 
@@ -91,7 +91,7 @@ Reply Threads has a server part and a TUI part. OpenCode loads them from two dif
 
 3. **Restart.** Run `opencode service restart`, quit the TUI with `Ctrl+C`, then start `opencode` again. Open a session and check that the Reply Mode toolbar appears. Without step 2, the toolbar and panel never appear.
 
-The server part loads from a Git install (checked on OpenCode 2.4.1). The toolbar has not been checked after a Git install. Use a local checkout for development.
+The server part and the TUI part (Reply Mode toggle with `Ctrl+Y`, and the Reply Threads panel) both load from a Git install, checked on OpenCode 2.4.1. Use a local checkout for development.
 
 Git installs fail if `package.json` has a script named `build`, `prepare`, `prepack`, `install`, `preinstall` or `postinstall`. This is an OpenCode bug. Don't add scripts with those names.
 
