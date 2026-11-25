@@ -216,7 +216,7 @@ The instruction requests one heading per comment. It includes the follow-up exam
 
 | Symptom | Check |
 | --- | --- |
-| No toolbar | Open a session. For a local checkout, check the path in `opencode.json` and `cli.json`, run `npm install`, and restart the TUI. For a Git install, check `opencode plugin list` and restart the TUI. |
+| No toolbar | Open a session. For a local checkout, check the path in `opencode.json` and `cli.json`, run `npm install`, and restart the TUI. For a Git install, check that `github:sunnymui/reply-threads` is in both `opencode.json` and `cli.json` (`opencode plugin list` doesn't show Git installs), then restart the service and the TUI. |
 | Selecting text does nothing | Turn on Reply Mode, then select text with the mouse. |
 | Send does nothing | Check the error notification. Run `/threads-reconcile` if a previous send has an unknown result. |
 | Comment saved as "unmatched" | The selected text doesn't match the stored source exactly. You can still send the comment. |

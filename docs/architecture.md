@@ -417,7 +417,7 @@ The long-term ideal is an indicator beside the original assistant excerpt. The p
 
 ## Packaging Boundary
 
-The package exposes a TUI entry point and is loaded from a local path (`private`, unpublished):
+The package exposes server and TUI entry points. It is loaded from a local path or from a Git install (`github:sunnymui/reply-threads`). It is `private` and not published to npm:
 
 ```json
 {
